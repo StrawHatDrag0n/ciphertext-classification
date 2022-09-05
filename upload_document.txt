@@ -1,0 +1,21 @@
+Complete this document and upload along with your prediction results and your code.
+
+### Method Name ###
+cipherword word2vec + BiLSTM
+
+### Representation of sentence ###
+First, created a vocabulary with all datasets, and assigned a unique id to each word and replaced each word in a sentence with its unique id. Padded each sentence upto max sentence length. Passed it to an embedding layer which generates a word embedding which is learned during training process.
+
+### Classifier ###
+The classifier consists of an embedding layer, follwed by bi-directional LSTM layer, follwed by a Dense layer, follwed by a Dense output layer. The learning objective was binary cross-entropy loss. 
+
+### Training & Development ###
+After training I evaluated the validation loss on the dev set. I used an Adma optimizer with learning_rate=0.001, batch_size = 128, dropout=0.3. I terminated the training using early stopping base on the validation loss with min_delta=0.  
+
+### Other methods ###
+No
+
+### Packages ###
+keras
+tensorflow
+numpy
